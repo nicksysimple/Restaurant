@@ -11,7 +11,7 @@ use App\User;
 use App\Restaurant;
 class SessionsController extends Controller
 {
-	  
+
 
     function create(Request $req){
 
@@ -29,6 +29,11 @@ class SessionsController extends Controller
 
     }
         function store(Request $req){
+					$required = $req->validate([
+
+						'email' => 'required|email',
+						'password' =>'required'
+					]);
     	$credentials = $req->only('email','password');
 
     	if (Auth::attempt($credentials)) {
@@ -37,7 +42,7 @@ class SessionsController extends Controller
     		$name = $user->username;
 
     		$req->session()->put('name',$name);
-    		
+
     		return redirect('index');
     	}else{
 

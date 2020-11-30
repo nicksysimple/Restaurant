@@ -14,7 +14,7 @@
   </button>
 </div>
 	@endif
-	
+
 	<div class="form-group">
 		<label for="email">Email</label>
 		<input type="email" name="email" class="form-control">
@@ -27,6 +27,15 @@
 
 	<button type="submit" class="btn btn-primary">Login</button>
 </form>
+<div class="alert">
+	<ul>
+		@foreach($errors->all() as $error)
+		<li>{{ $error}}</li>
+		@endforeach
+	</ul>
+
+
+</div>
 
 
 @endsection

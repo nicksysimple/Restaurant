@@ -2,8 +2,8 @@
 <html>
 <head>
 	<title>Restaurant App</title>
-	<link rel="stylesheet" href="/css/bootstrap.css" type="text/css">
-	<link rel="stylesheet" href="/css/styles.css" type="text/css">
+	<link rel="stylesheet" href="{{asset('/css/bootstrap.css')}}" type="text/css">
+	<link rel="stylesheet" href="{{asset('/css/styles.css')}}" type="text/css">
 
 	<script
   src="https://code.jquery.com/jquery-3.5.1.min.js"
