@@ -20,12 +20,13 @@
 	</div>
 
 	<div class="form-group">
-		<label for="password-confirmation">Password Confirmation</label>
-		<input type="password" name="password-confirmation" class="form-control">
+		<label for="password_confirmation">Password Confirmation</label>
+		<input type="password" name="password_confirmation" class="form-control">
 	</div>
 	<button type="submit" class="btn btn-primary">Register</button>
 </form>
 
+@if(count($errors) > 0)
 <div class="alert alert-danger">
 	<ul>
 		@foreach($errors->all() as $error)
@@ -33,5 +34,5 @@
 		@endforeach
 	</ul>
 </div>
-
+@endif
 @endsection

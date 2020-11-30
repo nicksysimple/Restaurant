@@ -4,7 +4,7 @@
 @section('content')
 
 
- <h5 id="head">Welcome Back , <em>{{ session('name')}}</em> </h5>
+ <h5 id=>Welcome Back , <em>{{ session('name')}}</em> </h5>
  <div class="container">
  		@foreach($resto as $key)
 
@@ -17,7 +17,7 @@
           <p> {{$key->address}}</p>
           <p> {{$key->email}}</p>
 
-          <button id="comment" type="onclick" class="btn btn-primary">Add comment</button>
+        <a href="comment"> <button type="button" class="btn btn-primary">Add comment</button></a> 
         </div>
       </div>
 
