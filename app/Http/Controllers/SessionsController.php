@@ -15,8 +15,14 @@ class SessionsController extends Controller
 
     function create(Request $req){
 
-    	$user = new User;
+			$validate = $req->validate([
+				'email' => 'required|email',
+				'username'=> 'required|min:3',
+				'password'=>'required|min:6|confirmed'
 
+			]);
+
+    	$user = new User;
     	$user->username = $req->input('username');
     	$user->email = $req->input('email');
     	$user->password = Hash::make($req->input('password'));

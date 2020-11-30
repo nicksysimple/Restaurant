@@ -27,7 +27,7 @@
 
 	<button type="submit" class="btn btn-primary">Login</button>
 </form>
-<div class="alert">
+<div  class="alert alert-danger">
 	<ul>
 		@foreach($errors->all() as $error)
 		<li>{{ $error}}</li>

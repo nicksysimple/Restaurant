@@ -6,12 +6,12 @@
 	@csrf
 	<div class="form-group">
 		<label for="username">Username</label>
-		<input type="text" name="username" class="form-control">
+		<input type="text" name="username" class="form-control" value="{{old('username')}}">
 	</div>
 
 	<div class="form-group">
 		<label for="email">Email</label>
-		<input type="email" name="email" class="form-control">
+		<input type="email" name="email" class="form-control" value="{{old('email')}}">
 	</div>
 
 	<div class="form-group">
@@ -25,5 +25,13 @@
 	</div>
 	<button type="submit" class="btn btn-primary">Register</button>
 </form>
+
+<div class="alert alert-danger">
+	<ul>
+		@foreach($errors->all() as $error)
+		<li>{{ $error}}</li>
+		@endforeach
+	</ul>
+</div>
 
 @endsection
