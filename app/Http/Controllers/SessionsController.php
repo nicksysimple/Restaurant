@@ -34,6 +34,7 @@ class SessionsController extends Controller
 
 
     }
+
         function store(Request $req){
 					$required = $req->validate([
 
@@ -41,6 +42,7 @@ class SessionsController extends Controller
 						'password' =>'required'
 					]);
     	$credentials = $req->only('email','password');
+
 
     	if (Auth::attempt($credentials)) {
 
@@ -72,8 +74,8 @@ class SessionsController extends Controller
 
 	function index(Request $req){
 
-		$resto = Restaurant::all();
-
-		return view('index',compact('resto'));
+		$restaurants = Restaurant::all();
+  //  print_r($restaurants);
+		return view('index',compact('restaurants'));
 	}
 }

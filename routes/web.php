@@ -29,6 +29,7 @@ Route::view('/add','add')->middleware('auth');
 Route::post('/add','RestaurantController@add');
 Route::get('logout','SessionsController@destroy');
 Route::any('/delete_hotel',"RestaurantController@hotel_delete");
+Route::post('/comment/{id}/comment','CommentsController@store');
+Route::get('/restaurant/{id}','CommentsController@show');
 
-Route::view('comment','comment');
-Route::post('/comment','CommentsController@store');
+Route::get('/comments','CommentsController@comments');

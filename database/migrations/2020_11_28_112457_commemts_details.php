@@ -15,7 +15,8 @@ class CommemtsDetails extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
-            $table->Integer('user_id');
+            $table->integer('user_id');
+            $table->integer('restaurant_id');
             $table->text('usercomment');
             $table->timestamps();
         });

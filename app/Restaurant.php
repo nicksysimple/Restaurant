@@ -6,7 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Restaurant extends Model
 {
-  //  protected $fillable = ['name','email','address'];
+  protected $fillable = ['name','email','address'];
 
-	protected $guarded = [];
+	public function comments(){
+
+		return $this->hasMany(Comment::class);
+	}
+
+
 }
