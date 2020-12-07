@@ -20,6 +20,22 @@
 
         </div>
       </div>
+      <div class="card">
+        <div class="title">
+          <h3>Comments</h3>
+          <div class="body">
+            <ul>
+              @foreach($comments as $comment)
+                <li><strong>{{$comment->created_at->diffForHumans() }}</strong> {{$comment->usercomment}}</li>
+              @endforeach
+
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
 
       <form action="comment/{{$resto->id}}/comment" method="post">
         @csrf

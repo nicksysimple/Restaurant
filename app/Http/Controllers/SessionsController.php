@@ -75,7 +75,9 @@ class SessionsController extends Controller
 	function index(Request $req){
 
 		$restaurants = Restaurant::all();
+    $comments = Restaurant::find(1)->comments;
+
   //  print_r($restaurants);
-		return view('index',compact('restaurants'));
+		return view('index',compact('restaurants','comments'));
 	}
 }
